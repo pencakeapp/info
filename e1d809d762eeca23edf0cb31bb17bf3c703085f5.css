@@ -86,8 +86,8 @@ a[data-token-index] svg.page {
   .notion-scroller > div > div:not([class]) {
     width: 100% !important;
     max-width: 960px !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: 50px !important;
+    padding-right: 50px !important;
   }
 
   /* normalizes content width */
@@ -152,10 +152,24 @@ a[data-token-index] svg.page {
     width: fit-content;
   }
 
+  /* original by loconotion */
+  /*
   .notion-scroller
     > div:nth-child(2):not(.notion-page-content)
     > div:not([data-block-id])
     div:not(.notion-page-details-controls) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  */
+
+  /* only apply to title by Suchul Shin */
+  .notion-scroller
+    > div:nth-child(2):not(.notion-page-content)
+    > div:not([data-block-id])
+    > div:not(.notion-page-details-controls)
+    > div:not(.notion-page-details-controls)
+    > div:not(.notion-page-details-controls) {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
