@@ -86,8 +86,8 @@ a[data-token-index] svg.page {
   .notion-scroller > div > div:not([class]) {
     width: 100% !important;
     max-width: 960px !important;
-    padding-left: 50px !important;
-    padding-right: 50px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 
   /* normalizes content width */
