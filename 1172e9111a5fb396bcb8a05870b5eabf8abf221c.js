@@ -146,3 +146,30 @@ document.body.onload = () => {
 document.body.onclick = e => {
   clearSelectedBlock();
 }
+
+// --------------------------------------------------------------
+// Google Analytics
+
+// <!-- Google tag (gtag.js) -->
+// <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZZNDMTFTKD"></script>
+// <script>
+//   window.dataLayer = window.dataLayer || [];
+//   function gtag(){dataLayer.push(arguments);}
+//   gtag('js', new Date());
+//   gtag('config', 'G-ZZNDMTFTKD');
+// </script>
+
+function dynamicallyLoadGoogleTagScript() {
+  var script = document.createElement("script");
+  script.src = "https://www.googletagmanager.com/gtag/js?id=G-ZZNDMTFTKD";
+  script.async = true;
+  document.head.appendChild(script);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZZNDMTFTKD');
+}
+
+dynamicallyLoadGoogleTagScript();
+// --------------------------------------------------------------
