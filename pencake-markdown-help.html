@@ -1,0 +1,693 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Markdown Help</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 120%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="8de5b8ec-42ef-4731-adb2-3e96b8f5a435" class="page sans"><header><h1 class="page-title">Markdown Help</h1></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="adee015b-94e3-47a0-b65e-e415851ecd90"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">The markdown syntax below is only compatible with PenCake.</div></figure><p id="762d27c5-7a65-478e-88bc-f050a7b95245" class="">
+</p><h2 id="1e9960d7-ae8c-414e-b038-9928cd8a2311" class="">Bold</h2><table id="231ee84e-8a15-48c5-ae16-cce64c996f59" class="simple-table"><tbody><tr id="ef88f969-467c-428c-9409-b23b0d157d47"><td id="{]Fi" class="block-color-gray_background" style="width:275px"><strong>Markdown</strong></td><td id="vxK_" class="block-color-gray_background" style="width:285px"><strong>Rendered text</strong></td></tr><tr id="8ed83efa-26e1-4710-9fa0-491ea08b4f93"><td id="{]Fi" class="" style="width:275px">This is <mark class="highlight-gray_background">**</mark>bold text<mark class="highlight-gray_background">**</mark>.</td><td id="vxK_" class="" style="width:285px">This is <strong>bold text</strong>.</td></tr><tr id="f38f51d7-b2ba-4045-9e8c-6dbea608372f"><td id="{]Fi" class="" style="width:275px">Love<mark class="highlight-gray_background">**</mark>and<mark class="highlight-gray_background">**</mark>peace</td><td id="vxK_" class="" style="width:285px">Love<strong>and</strong>peace</td></tr></tbody></table><p id="207952ff-1cfe-474c-b506-01ac3b7e9965" class="">
+</p><table id="64e6d3fd-e533-4743-9bd2-8d5cdaec03c3" class="simple-table"><tbody><tr id="e90a2afc-0419-4abf-a400-1439e697e18c"><td id="{]Fi" class="block-color-gray_background" style="width:275px"><strong>✅  Do this</strong></td><td id="vxK_" class="block-color-gray_background" style="width:285px"><strong>❌  Don’t do this</strong></td></tr><tr id="412fba38-5c5a-4d02-a355-e4bdc55c21ca"><td id="{]Fi" class="" style="width:275px">This is <mark class="highlight-gray_background">**</mark>bold text<mark class="highlight-gray_background">**</mark>.</td><td id="vxK_" class="" style="width:285px">This is <mark class="highlight-gray_background">**</mark> bold text<mark class="highlight-gray_background">**</mark>.</td></tr></tbody></table><p id="e0b50e96-8470-4c3e-9ecf-64bc0a1138b0" class="">
+</p><h2 id="6489cff5-5376-4d74-bce1-e6a3135742f9" class="">Italic</h2><table id="74b66c71-1bb5-424e-8680-86e742286a0f" class="simple-table"><tbody><tr id="82a1796e-95b4-442b-a0e9-284f817db6e1"><td id="{]Fi" class="block-color-gray_background" style="width:275px"><strong>Markdown</strong></td><td id="vxK_" class="block-color-gray_background" style="width:285px"><strong>Rendered text</strong></td></tr><tr id="ac8b458a-cee8-45a3-8cc8-fbc303df179b"><td id="{]Fi" class="" style="width:275px">This is <mark class="highlight-gray_background">/</mark>italicized text<mark class="highlight-gray_background">/</mark>.</td><td id="vxK_" class="" style="width:285px">This is <em>italicized text</em>.</td></tr><tr id="9561b71f-d9e5-48d2-8b79-3d262d433925"><td id="{]Fi" class="" style="width:275px">Love<mark class="highlight-gray_background">/</mark>and<mark class="highlight-gray_background">/</mark>peace</td><td id="vxK_" class="" style="width:285px">Love<em>and</em>peace</td></tr></tbody></table><p id="6321e730-c5d1-4949-8a71-e99ec3c28a07" class="">
+</p><table id="b2cbff94-f3bb-4a7b-947d-e8955f942d13" class="simple-table"><tbody><tr id="11b487a7-2b74-4d2e-bca7-af5c52bfb52e"><td id="{]Fi" class="block-color-gray_background" style="width:275px"><strong>✅  Do this</strong></td><td id="vxK_" class="block-color-gray_background" style="width:285px"><strong>❌  Don’t do this</strong></td></tr><tr id="3f051c36-02c9-430e-95c6-00ffefc55311"><td id="{]Fi" class="" style="width:275px">This is <mark class="highlight-gray_background">/</mark>italicized text<mark class="highlight-gray_background">/</mark>.</td><td id="vxK_" class="" style="width:285px">This is <mark class="highlight-gray_background">/</mark>italicized text <mark class="highlight-gray_background">/</mark>.</td></tr></tbody></table><p id="e0224281-ed2f-4f47-b7e8-41dc57fd67a9" class="">
+</p><h2 id="808e0950-2716-4722-908c-01d1771c214d" class="">Bold and Italic</h2><table id="d9024876-113d-4f35-a60e-b3de0d195a6f" class="simple-table"><tbody><tr id="81f6b91c-c8c7-4917-848a-1540371dea77"><td id="{]Fi" class="block-color-gray_background" style="width:275px"><strong>Markdown</strong></td><td id="vxK_" class="block-color-gray_background" style="width:285px"><strong>Rendered text</strong></td></tr><tr id="635b81cd-64b5-4160-856d-76c79f6a5738"><td id="{]Fi" class="" style="width:275px">This is <mark class="highlight-gray_background">/**</mark>bold and italicized<mark class="highlight-gray_background">**/</mark> text.</td><td id="vxK_" class="" style="width:285px">This is <em><strong>bold and italicized</strong></em> text.</td></tr><tr id="78f159a4-ff97-4fec-b57b-7752dbba8a64"><td id="{]Fi" class="" style="width:275px">This text is <mark class="highlight-gray_background">**/</mark>really important<mark class="highlight-gray_background">**/</mark>.</td><td id="vxK_" class="" style="width:285px">This text is <em><strong>really important</strong></em>.</td></tr><tr id="09e50e6d-e437-468a-9cb8-d731e218a128"><td id="{]Fi" class="" style="width:275px">Love<mark class="highlight-gray_background">**/</mark>and<mark class="highlight-gray_background">/**</mark>peace</td><td id="vxK_" class="" style="width:285px">Love<em><strong>and</strong></em>peace</td></tr></tbody></table><p id="44d63ae6-8fe4-4ca7-87d7-4e434df40ed5" class="">
+</p><table id="c03dd7c0-6761-4665-93fc-cd4daedb662f" class="simple-table"><tbody><tr id="c26d60df-cd19-4036-9b22-5e215058cfbf"><td id="{]Fi" class="block-color-gray_background" style="width:275px"><strong>✅  Do this</strong></td><td id="vxK_" class="block-color-gray_background" style="width:285px"><strong>❌  Don’t do this</strong></td></tr><tr id="47a8b7da-f98e-43bb-a586-eb15cf4dcb8e"><td id="{]Fi" class="" style="width:275px">Really <mark class="highlight-gray_background">/**</mark>very<mark class="highlight-gray_background">**/</mark> important text</td><td id="vxK_" class="" style="width:285px">Really <mark class="highlight-gray_background">/**</mark> very <mark class="highlight-gray_background">**/</mark> important text</td></tr></tbody></table><p id="55e4971c-c385-44f9-b165-913ba1df2bab" class="">
+</p><h2 id="7b49f7d0-0893-431b-b4ff-949719f22d18" class="">Underline</h2><table id="8c72efdd-2f1b-4119-916b-ec073bd4b5c5" class="simple-table"><tbody><tr id="7484e217-e8fa-4c76-8471-a3b2c970968a"><td id="{]Fi" class="block-color-gray_background" style="width:275px"><strong>Markdown</strong></td><td id="vxK_" class="block-color-gray_background" style="width:285px"><strong>Rendered text</strong></td></tr><tr id="bd0a5398-d696-41e9-b02a-8f7a9c1cece9"><td id="{]Fi" class="" style="width:275px">This is <mark class="highlight-gray_background">__</mark>underlined text<mark class="highlight-gray_background">__</mark>.</td><td id="vxK_" class="" style="width:285px">This is <span style="border-bottom:0.05em solid">underlined text</span>.</td></tr><tr id="9152a5ea-8f42-4f76-81fa-ac16175686d8"><td id="{]Fi" class="" style="width:275px">Love<mark class="highlight-gray_background">__</mark>and<mark class="highlight-gray_background">__</mark>peace</td><td id="vxK_" class="" style="width:285px">Love<span style="border-bottom:0.05em solid">and</span>peace</td></tr></tbody></table><p id="8be987df-aad6-4616-a6e5-a7f240646d23" class="">
+</p><h2 id="9c3d9bb5-6e86-499e-9294-a586cec114a0" class="">Strikethrough</h2><table id="c1ff67c2-b111-4155-9f76-ee926a1a66d1" class="simple-table"><tbody><tr id="6c9e10f7-2ff6-4ac6-a4bf-8996de98fe54"><td id="{]Fi" class="block-color-gray_background" style="width:275px"><strong>Markdown</strong></td><td id="vxK_" class="block-color-gray_background" style="width:285px"><strong>Rendered text</strong></td></tr><tr id="b23af828-5ec5-4ba1-b454-d311040785e2"><td id="{]Fi" class="" style="width:275px"><mark class="highlight-gray_background">~~</mark>The world is flat.<mark class="highlight-gray_background">~~</mark> We now know that the world is round.</td><td id="vxK_" class="" style="width:285px"><del>The world is flat.</del> We now know that the world is round.</td></tr><tr id="3fba5ed4-be00-4c61-8967-0ec487478525"><td id="{]Fi" class="" style="width:275px">Love<mark class="highlight-gray_background">~~</mark>and<mark class="highlight-gray_background">~~</mark>peace</td><td id="vxK_" class="" style="width:285px">Love<del>and</del>peace</td></tr></tbody></table><p id="c1c6e721-98ac-4636-acc1-25ca9b7380d8" class="">
+</p><h2 id="454b1d0a-9fbf-41ef-9a6f-540c39341d44" class="">Highlight</h2><table id="8c7ab7db-ec24-4e12-948b-b9defc595345" class="simple-table"><tbody><tr id="d4aadbf9-16e1-4193-954f-ef8c90e1fd5a"><td id="{]Fi" class="block-color-gray_background" style="width:275px"><strong>Markdown</strong></td><td id="vxK_" class="block-color-gray_background" style="width:285px"><strong>Rendered text</strong></td></tr><tr id="30914d62-912c-4ebc-a115-8a3827687f1d"><td id="{]Fi" class="" style="width:275px">This is <mark class="highlight-gray_background">==</mark>highlighted<mark class="highlight-gray_background">==</mark> text.</td><td id="vxK_" class="" style="width:285px">This is <mark class="highlight-yellow_background">highlighted</mark> text.</td></tr><tr id="0c66e1b6-3ed9-49db-a5ad-656b031eb129"><td id="{]Fi" class="" style="width:275px">We now know that <mark class="highlight-gray_background">==</mark>the world is round<mark class="highlight-gray_background">==</mark>.</td><td id="vxK_" class="" style="width:285px">We now know that <mark class="highlight-yellow_background">the world is round</mark>.</td></tr><tr id="32d3a297-4f8c-45d9-a430-d491230c3279"><td id="{]Fi" class="" style="width:275px">Love<mark class="highlight-gray_background">==</mark>and<mark class="highlight-gray_background">==</mark>peace</td><td id="vxK_" class="" style="width:285px">Love<mark class="highlight-yellow_background">and</mark>peace</td></tr></tbody></table><p id="488c7161-6200-4758-99fa-7f898941d7f1" class="">
+</p><h2 id="f750e228-77bb-4874-a9d5-dd2ad789b117" class="">Combination of styles</h2><table id="f3b7f4e9-fb94-42e2-9065-219641ea82cd" class="simple-table"><tbody><tr id="21d89d4f-86d7-4063-b156-325895f88e75"><td id="{]Fi" class="block-color-gray_background" style="width:275px"><strong>Markdown</strong></td><td id="vxK_" class="block-color-gray_background" style="width:285px"><strong>Rendered text</strong></td></tr><tr id="f6efb27a-0f16-41eb-be9b-511ca4d5b053"><td id="{]Fi" class="" style="width:275px">This is <mark class="highlight-gray_background">==/**__~~</mark>also available<mark class="highlight-gray_background">__~~**/==</mark>.</td><td id="vxK_" class="" style="width:285px">This is <mark class="highlight-yellow_background"><del><span style="border-bottom:0.05em solid"><em><strong>also available</strong></em></span></del></mark>.</td></tr><tr id="f76e0f4f-e527-414e-bec9-7ed3bbf3c1f1"><td id="{]Fi" class="" style="width:275px">The <mark class="highlight-gray_background">**==__</mark>symbol’s order<mark class="highlight-gray_background">==**__</mark> is not important.</td><td id="vxK_" class="" style="width:285px">The <mark class="highlight-yellow_background"><span style="border-bottom:0.05em solid"><strong>symbol’s order</strong></span></mark> is not important.</td></tr></tbody></table><p id="04d51d5d-2003-4303-ad7b-1646afd09011" class="">
+</p><p id="d8864361-e570-4720-b032-70960685d4b2" class="">
+</p><hr id="36e6a822-21d7-4d94-8cf5-02644af380b5"/><h2 id="7cb5b712-a1f9-418f-9dd6-3c489ccfbc82" class="">Headings</h2><p id="66b1d322-e3a8-4ece-beaa-e6af2fe244ca" class="">
+</p><pre id="80dbed04-46e3-4c99-b3c0-fb227a4c9a1a" class="code code-wrap"><code># Heading level 1
+
+## Heading level 2
+
+### Heading level 3</code></pre><h1 id="c27916f3-eb4c-4ede-9c93-d41bb39fe528" class="">Heading level 1</h1><h2 id="2e9e9028-1f4a-408b-a366-d48cd38a80bc" class="">Heading level 2</h2><h3 id="554e04a5-ee5b-491c-9a08-75a537861520" class="">Heading level 3</h3><p id="7183dc3c-1f25-4efc-aab5-95ef08362a48" class="">
+</p><p id="2ebeb299-b5a8-42f0-8b70-3e6890668e81" class="">
+</p><hr id="f88d9d9b-b140-4193-a5ad-7332861131ad"/><h2 id="c995fd64-b193-4aa4-a6aa-ee04cea34056" class="">Horizontal rule</h2><p id="84742c78-b3f7-453e-b534-cebe378658fb" class="">
+</p><pre id="461fcfd6-71b5-4fb2-a892-bac199bb2c4e" class="code code-wrap"><code>-----</code></pre><p id="3c116782-f147-436c-b6eb-6fbfe7d139f9" class="">
+</p><hr id="311c620c-80f8-4859-bc6c-fa54a5b6781e"/><p id="d2fd48e6-4a85-4067-94e6-336f711cb333" class="">
+</p><p id="237ead49-3043-4323-ad12-fe09ef5c91bd" class="">
+</p><p id="1eb03b1b-3001-4502-964e-95fab9c8a745" class="">
+</p><hr id="649692ad-feb1-4677-956c-8433889944fc"/><h3 id="28804e43-83d1-43bd-8392-84d503992a7c" class="">License of this document</h3><p id="7df08a9f-0654-45c6-92ba-8a12cf74d600" class="">This document was created by referring to <a href="http://markdownguide.org/">markdownguide.org</a>.</p><p id="66c48160-d92a-46dd-834d-7ad05c05b67f" class="">The content of this document is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International license</a>, under the license of <a href="https://github.com/mattcone/markdown-guide#license">the orginal source document</a>.</p></div></article></body></html>
