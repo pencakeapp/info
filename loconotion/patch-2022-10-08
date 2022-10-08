@@ -1,0 +1,19 @@
+# 1
+
+replace this
+<div style="display: flex; justify-content: space-between; align-items: center; overflow: hidden; height: 45px; padding-left: 12px; padding-right: 10px;"><div class="notranslate" style="display: flex; align-items: center; line-height: 1.2; font-size: 14px; height: 100%; flex-grow: 0; margin-right: 8px; min-width: 0px;">
+
+to this
+<div style="app-region: drag; display: flex; justify-content: space-between; align-items: center; overflow: hidden; height: 45px; padding-left: 12px; padding-right: 10px;"><div class="notranslate" style="display: flex; align-items: center; line-height: 1.2; font-size: 14px; app-region: no-drag; height: 100%; flex-grow: 0; margin-right: 8px; min-width: 0px;">
+
+
+# 2
+
+replace <main & </main
+to <div & </div
+
+
+# 3
+
+replace 936e6c8cf859348068afcd7cb5c4d16824cdfeaf.css
+to 297219396aff5ddde37925b1b7f2b23c7c44e8e2.css
