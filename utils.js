@@ -13,8 +13,8 @@ function detectOSAndArchitecture() {
   var os = "Unknown OS";
   var arch = "Unknown Architecture";
 
-  var a = navigator.appVersion;
-  var b = navigator.userAgent;
+  var a = navigator.appVersion || '';
+  var b = navigator.userAgent || '';
 
   // 운영체제 감지
   if (a.indexOf("Win") != -1 || b.indexOf("Win") != -1) os = "Windows";
@@ -32,13 +32,6 @@ function detectOSAndArchitecture() {
   }
 
   return { os, arch };
-}
-
-function myFunction() {
-  // 함수 로직
-  // alert('navigator.appVersion: ' + navigator.appVersion);
-  // alert('navigator.userAgent: ' + navigator.userAgent);
-  alert(detectOSAndArchitecture().os + "/" + detectOSAndArchitecture().arch);
 }
 
 function downloadFileFromUrl(url) {
