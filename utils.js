@@ -23,17 +23,38 @@ function downloadFileFromUrl(url) {
   document.body.removeChild(a);
 }
 
+function gtag_log_event(event_name, event_param) {
+  try {
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    if (event_param) {
+      gtag("event", event_name, event_param);
+    } else {
+      gtag("event", event_name);
+    }
+  } catch (e) {}
+}
+
 function downloadMacOS_Intel() {
+  gtag_log_event("download_desktop_macos_x64");
+  gtag_log_event("download_desktop", { os: "macOS", arch: "x64" });
   downloadFileFromUrl(urlMacOS_x64);
 }
 
 function downloadMacOS_AppleSilicon(lang) {
   const msg = appleSiliconWarning[lang || "en"] || appleSiliconWarning.en;
-  alert("‼️ " + msg);
-  downloadFileFromUrl(urlMacOS_arm64);
+  if (confirm("‼️ " + msg)) {
+    gtag_log_event("download_desktop_macos_arm64");
+    gtag_log_event("download_desktop", { os: "macOS", arch: "arm64" });
+    downloadFileFromUrl(urlMacOS_arm64);
+  }
 }
 
 function downloadWindows() {
+  gtag_log_event("download_desktop_windows_x64");
+  gtag_log_event("download_desktop", { os: "windows", arch: "x64" });
   downloadFileFromUrl(urlWindows);
 }
 
