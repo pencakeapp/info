@@ -1,5 +1,5 @@
-var MAC_VERSION = "0.2.0";
-var WIN_VERSION = "0.2.0";
+var MAC_VERSION = "0.2.1";
+var WIN_VERSION = "0.2.1";
 
 var baseUrl = "https://github.com/pencakeapp-desktop/app/releases/download";
 
