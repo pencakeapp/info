@@ -35,6 +35,28 @@ const o = "▪ ";
 const logs = [
   {
     features: {
+      ko: `${o}비밀번호 잠금 기능이 추가되었습니다.\n${o}더 큰 글자 크기가 추가되었습니다.\n${o}이제 단축키(Cmd+S / Ctrl+S)로 글을 저장하고 나갈 수 있습니다.\n${o}이제 팝업 대화상자에서 Enter 키와 Esc 키를 사용할 수 있습니다.`,
+      en: `${o}A passcode lock feature has been added.\n${o}Larger text size options are now available.\n${o}You can now save and exit an article using a keyboard shortcut (Cmd+S / Ctrl+S).\n${o}You can now use the Enter and Esc keys in popup dialog boxes.`,
+      ja: `${o}パスワードロック機能が追加されました。\n${o}より大きな文字サイズが追加されました。\n${o}これで、ショートカット(Cmd+S / Ctrl+S)で記事を保存して終了することができます。\n${o}これで、ポップアップダイアログボックスでEnterキーとEscキーを使えるようになりました。`,
+      es: `${o}Se ha agregado la función de bloqueo con contraseña.\n${o}Ahora están disponibles tamaños de letra más grandes.\n${o}Ahora puedes guardar y salir de un artículo usando un atajo de teclado (Cmd+S / Ctrl+S).\n${o}Ahora puedes usar las teclas Enter y Esc en los cuadros de diálogo emergentes.`,
+      pt: `${o}Adicionada a função de bloqueio por senha.\n${o}Tamanhos de texto maiores foram adicionados.\n${o}Agora é possível salvar e sair de um artigo usando um atalho de teclado (Cmd+S / Ctrl+S).\n${o}Agora você pode usar as teclas Enter e Esc em caixas de diálogo popup.`,
+      'zh-hans': `${o}已添加密码锁定功能。\n${o}增加了更大的字号选项。\n${o}现在可以使用快捷键(Cmd+S / Ctrl+S)保存并退出文章。\n${o}现在您可以在弹出对话框中使用Enter键和Esc键。`,
+      'zh-hant': `${o}已新增密碼鎖定功能。\n${o}新增了更大的文字大小選項。\n${o}現在可以使用快捷鍵(Cmd+S / Ctrl+S)儲存並退出文章。\n${o}現在您可以在彈出對話框中使用Enter鍵和Esc鍵。`,
+    },
+    others: {
+      ko: `${o}Shift+Enter 입력 시 가끔씩 발생하는 줄바꿈 오류를 수정하였습니다.\n${o}작은 모니터에서 설정 창의 세로 크기를 키웠습니다.\n${o}팝업 대화상자의 내용이 길 경우 위 아래가 잘려서 버튼을 누를 수 없는 현상을 해결하였습니다.`,
+      en: `${o}Fixed an issue where pressing Shift+Enter sometimes caused irregular line breaks.\n${o}Increased the vertical size of the settings window on smaller monitors.\n${o}Resolved an issue where the top and bottom of popup dialog content were cut off, making buttons inaccessible when the content was lengthy.`,
+      ja: `${o}Shift+Enterを入力した際、時々発生していた改行エラーを修正しました。\n${o}小さいモニターで設定ウィンドウの縦サイズを大きくしました。\n${o}ポップアップダイアログの内容が長い場合に上下が切れてボタンが押せなくなる問題を解決しました。`,
+      es: `${o}Se corrigió un problema por el cual presionar Shift+Enter a veces causaba saltos de línea irregulares.\n${o}Se ha aumentado el tamaño vertical de la ventana de configuración en monitores pequeños.\n${o}Se ha resuelto un problema donde el contenido de los cuadros de diálogo emergentes se cortaba por arriba y por abajo, haciendo que los botones no fueran accesibles cuando el contenido era extenso.`,
+      pt: `${o}Corrigido um problema onde pressionar Shift+Enter às vezes causava quebras de linha irregulares.\n${o}Aumentamos o tamanho vertical da janela de configurações em monitores menores.\n${o}Resolvido um problema em que o conteúdo das caixas de diálogo popup era cortado na parte superior e inferior, tornando os botões inacessíveis quando o conteúdo era longo.`,
+      "zh-hans": `${o}修正了在输入Shift+Enter时偶尔会出现的换行错误。\n${o}在较小的显示器上增加了设置窗口的垂直大小。\n${o}解决了弹出对话框内容较长时，顶部和底部被切割导致按钮无法点击的问题。`,
+      "zh-hant": `${o}修正了在輸入Shift+Enter時偶爾會發生的換行錯誤。\n${o}在較小的顯示器上增加了設定視窗的垂直大小。\n${o}解決了彈出對話框內容較長時，頂部和底部被切割導致按鈕無法點擊的問題。`,
+    },
+    version: "0.4.0",
+    releasedAt: "2024-04-03",
+  },
+  {
+    features: {
       ko: `${o}문장 부호 자동 교정 기능이 추가되었습니다.\n- 곧은 큰따옴표 (") → 둥근 큰따옴표 (“”)\n- 곧은 작은따옴표 (\') → 둥근 작은따옴표 (‘’)\n- 마침표 세 개 (...) → 말줄임표 (…)\n${o}되돌리기(undo)를 하면 교정 전 상태로 돌아갑니다.\n${o}자동 교정 기능을 비활성화하는 옵션은 추후 제공될 예정입니다.`,
       en: `${o}Automatic punctuation correction feature has been added.\n- Straight double quotes (") → Curly double quotes (“”)\n- Straight single quotes (') → Curly single quotes (‘’)\n- Three periods (...) → Ellipsis (…)\n${o}Using the undo function will revert the text to its pre-corrected state.\n${o}An option to disable the automatic correction feature will be provided in the future.`,
       ja: `${o}句読点の自動修正機能が追加されました。\n- 直線のダブルクォーテーション (") → 曲線のダブルクォーテーション (“”)\n- 直線のシングルクォーテーション (') → 曲線のシングルクォーテーション (‘’)\n- ピリオド3つ (...) → 省略記号 (…)\n${o}元に戻す機能を使用すると、修正前の状態にテキストが戻ります。\n${o}自動修正機能を無効にするオプションは、将来提供される予定です。`,
