@@ -35,13 +35,35 @@ const o = "▪ ";
 const logs = [
   {
     features: {
+      ko: `${o}PDF로 내보내기 기능이 추가되었습니다.\n${o}DOCX로 내보내기 기능이 추가되었습니다.\n${o}프록시 기능이 추가되었습니다.\n- [설정 > 프록시]에서 설정할 수 있습니다.\n${o}비밀번호 찾기 기능이 추가되었습니다.`,
+      en: `${o}The feature to export to PDF has been added.\n${o}The feature to export to DOCX has been added.\n${o}A proxy feature has been added.\n- You can configure it in [Settings > Proxy].\n${o}A password recovery feature has been added.`,
+      ja: `${o}PDFとしてエクスポートできる機能が追加されました。\n${o}DOCXとしてエクスポートできる機能が追加されました。\n${o}プロキシ機能が追加されました。\n- [設定 > プロキシ] から設定できます。\n${o}パスワード復旧機能が追加されました。`,
+      es: `${o}Se agregó la función para exportar en formato PDF.\n${o}Se agregó la función para exportar en formato DOCX.\n${o}Se añadió una función de proxy.\n- Puedes configurarla en [Configuración > Proxy].\n${o}Se agregó la función de recuperación de contraseñas.`,
+      pt: `${o}A funcionalidade de exportar para PDF foi adicionada.\n${o}A funcionalidade de exportar para DOCX foi adicionada.\n${o}Um recurso de proxy foi incluído.\n- Você pode configurá-lo em [Configurações > Proxy].\n${o}Foi adicionada a funcionalidade de recuperação de senha.`,
+      "zh-hans": `${o}新增了导出为PDF的功能。\n${o}新增了导出为DOCX的功能。\n${o}新增了代理功能。\n- 你可以在 [设置 > 代理] 中进行配置。\n${o}新增了找回密码功能。`,
+      "zh-hant": `${o}新增匯出為PDF的功能。\n${o}新增匯出為DOCX的功能。\n${o}新增了代理功能。\n- 你可以在 [設定 > 代理] 中進行設定。\n${o}新增了找回密碼功能。`,
+    },
+    others: {
+      ko: `${o}둥근 따옴표 자동 변환 알고리즘이 개선되었습니다.\n${o}비밀번호 입력 화면의 디자인을 개선하였습니다.\n${o}비밀번호 입력 화면에서 Del 키와 Backspace 키를 사용할 수 있게 하였습니다.\n${o}구글 로그인 안정성을 개선하였습니다.`,
+      en: `${o}The algorithm for automatically converting straight quotes to curly quotes has been improved.\n${o}The design of the password input screen has been improved.\n${o}The Del and Backspace keys can now be used on the password input screen.\n${o}Google login stability has been improved.`,
+      ja: `${o}スマートクオート（ストレートクオートを曲線クオートに自動変換）のアルゴリズムが改善されました。\n${o}パスワード入力画面のデザインが改良されました。\n${o}パスワード入力画面でDelキーやBackspaceキーが使用可能になりました。\n${o}Googleログインの安定性が向上しました。`,
+      es: `${o}Se mejoró el algoritmo para convertir automáticamente las comillas rectas en comillas curvas.\n${o}Se mejoró el diseño de la pantalla de ingreso de contraseña.\n${o}Ahora puedes usar las teclas Del y Backspace en la pantalla de ingreso de contraseña.\n${o}Se mejoró la estabilidad del inicio de sesión con Google.`,
+      pt: `${o}O algoritmo para conversão automática de aspas retas para aspas curvas foi aprimorado.\n${o}O design da tela de inserção de senha foi melhorado.\n${o}Agora é possível usar as teclas Del e Backspace na tela de inserção de senha.\n${o}A estabilidade do login com o Google foi aprimorada.`,
+      "zh-hans": `${o}自动将直引号转换为弯引号的算法已优化。\n${o}密码输入界面的设计已改进。\n${o}现在可以在密码输入界面使用Del和Backspace键了。\n${o}Google登录的稳定性已提升。`,
+      "zh-hant": `${o}自動將直引號轉換為弧形引號的演算法已優化。\n${o}密碼輸入畫面的設計已改進。\n${o}現在可以在密碼輸入介面使用Del和Backspace鍵了。\n${o}Google登入的穩定性已提升。`,
+    },
+    version: "0.5.0",
+    releasedAt: "2024-12-21",
+  },
+  {
+    features: {
       ko: `${o}비밀번호 잠금 기능이 추가되었습니다.\n${o}더 큰 글자 크기가 추가되었습니다.\n${o}이제 단축키(Cmd+S / Ctrl+S)로 글을 저장하고 나갈 수 있습니다.\n${o}이제 팝업 대화상자에서 Enter 키와 Esc 키를 사용할 수 있습니다.`,
       en: `${o}A passcode lock feature has been added.\n${o}Larger text size options are now available.\n${o}You can now save and exit an article using a keyboard shortcut (Cmd+S / Ctrl+S).\n${o}You can now use the Enter and Esc keys in popup dialog boxes.`,
       ja: `${o}パスワードロック機能が追加されました。\n${o}より大きな文字サイズが追加されました。\n${o}これで、ショートカット(Cmd+S / Ctrl+S)で記事を保存して終了することができます。\n${o}これで、ポップアップダイアログボックスでEnterキーとEscキーを使えるようになりました。`,
       es: `${o}Se ha agregado la función de bloqueo con contraseña.\n${o}Ahora están disponibles tamaños de letra más grandes.\n${o}Ahora puedes guardar y salir de un artículo usando un atajo de teclado (Cmd+S / Ctrl+S).\n${o}Ahora puedes usar las teclas Enter y Esc en los cuadros de diálogo emergentes.`,
       pt: `${o}Adicionada a função de bloqueio por senha.\n${o}Tamanhos de texto maiores foram adicionados.\n${o}Agora é possível salvar e sair de um artigo usando um atalho de teclado (Cmd+S / Ctrl+S).\n${o}Agora você pode usar as teclas Enter e Esc em caixas de diálogo popup.`,
-      'zh-hans': `${o}已添加密码锁定功能。\n${o}增加了更大的字号选项。\n${o}现在可以使用快捷键(Cmd+S / Ctrl+S)保存并退出文章。\n${o}现在您可以在弹出对话框中使用Enter键和Esc键。`,
-      'zh-hant': `${o}已新增密碼鎖定功能。\n${o}新增了更大的文字大小選項。\n${o}現在可以使用快捷鍵(Cmd+S / Ctrl+S)儲存並退出文章。\n${o}現在您可以在彈出對話框中使用Enter鍵和Esc鍵。`,
+      "zh-hans": `${o}已添加密码锁定功能。\n${o}增加了更大的字号选项。\n${o}现在可以使用快捷键(Cmd+S / Ctrl+S)保存并退出文章。\n${o}现在您可以在弹出对话框中使用Enter键和Esc键。`,
+      "zh-hant": `${o}已新增密碼鎖定功能。\n${o}新增了更大的文字大小選項。\n${o}現在可以使用快捷鍵(Cmd+S / Ctrl+S)儲存並退出文章。\n${o}現在您可以在彈出對話框中使用Enter鍵和Esc鍵。`,
     },
     others: {
       ko: `${o}Shift+Enter 입력 시 가끔씩 발생하는 줄바꿈 오류를 수정하였습니다.\n${o}작은 모니터에서 설정 창의 세로 크기를 키웠습니다.\n${o}팝업 대화상자의 내용이 길 경우 위 아래가 잘려서 버튼을 누를 수 없는 현상을 해결하였습니다.`,
