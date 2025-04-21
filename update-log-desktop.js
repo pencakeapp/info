@@ -4,6 +4,7 @@ const updateHistoryTitle = {
   ja: "アップデート履歴",
   es: "Historial de actualizaciones",
   pt: "Histórico de atualizações",
+  de: "Updateverlauf",
   "zh-hans": "更新记录",
   "zh-hant": "更新紀錄",
 };
@@ -14,6 +15,7 @@ const newFeaturesTitle = {
   ja: "新機能",
   es: "Novedades",
   pt: "Novidades",
+  de: "Was ist neu",
   "zh-hans": "新功能",
   "zh-hant": "最新功能",
 };
@@ -24,6 +26,7 @@ const othersTitle = {
   ja: "その他の項目",
   es: "Notas adicionales",
   pt: "Notas adicionais",
+  de: "Weitere Änderungen",
   "zh-hans": "其他说明",
   "zh-hant": "其他事項",
 };
