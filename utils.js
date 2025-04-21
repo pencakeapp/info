@@ -44,12 +44,14 @@ function downloadMacOS_Intel() {
 }
 
 function downloadMacOS_AppleSilicon(lang) {
-  const msg = appleSiliconWarning[lang || "en"] || appleSiliconWarning.en;
-  if (confirm("‼️ " + msg)) {
+  // 2024-02-22: 기존 Mac 앱스토어에서 설치한 사람들을 위해 관련 안내문 띄움
+  // 2025-04-21: 충분히 고지되었고 더이상 기존 앱스토어 버전을 사용하는 사람은 거의 없다고 보고 안내문을 띄우지 않음
+  // const msg = appleSiliconWarning[lang || "en"] || appleSiliconWarning.en;
+  // if (confirm("‼️ " + msg)) {
     gtag_log_event("download_desktop_macos_arm64");
     gtag_log_event("download_desktop", { os: "macOS", arch: "arm64" });
     downloadFileFromUrl(urlMacOS_arm64);
-  }
+  // }
 }
 
 function downloadWindows() {
